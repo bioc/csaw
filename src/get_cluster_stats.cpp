@@ -61,7 +61,7 @@ SEXP get_cluster_stats (SEXP fcdex, SEXP pvaldex, SEXP tab, SEXP by, SEXP weight
 		}
 
 		int* otptr=INTEGER(VECTOR_ELT(output, 0));
-		int** ofptrs=(int**)R_alloc(fcn, sizeof(int*));
+		int** ofptrs=(int**)R_alloc(fcn*2, sizeof(int*));
 		ofptrs[0]=INTEGER(VECTOR_ELT(output, 1));
 		for (int i=1; i<fcn*2; ++i) { ofptrs[i]=ofptrs[i-1]+total; }
 		double* opptr=REAL(VECTOR_ELT(output, 2));
