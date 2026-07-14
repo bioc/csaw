@@ -1,6 +1,6 @@
 Package: csaw
-Version: 1.47.0
-Date: 2025-06-20
+Version: 1.47.1
+Date: 2026-07-13
 Title: ChIP-Seq Analysis with Windows
 Authors@R:
     c(person("Aaron", "Lun", role=c("aut", "cre"), email = "infinite.monkeys.with.keyboards@gmail.com"),
@@ -29,7 +29,7 @@ Suggests:
     TxDb.Mmusculus.UCSC.mm10.knownGene,
     testthat,
     GenomicFeatures,
-    GenomicAlignments,
+    cigarillo,
     knitr,
     BiocStyle,
     rmarkdown,

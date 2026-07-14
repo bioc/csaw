@@ -27,7 +27,7 @@ SREF <- function(bam, param) {
         out <- lapply(out, "[", keep)
     }
 
-    out$rwidth <- GenomicAlignments::cigarWidthAlongReferenceSpace(out$cigar)
+    out$rwidth <- cigarillo::cigar_extent_along_ref(out$cigar)
 
     if (length(param$discard)) {
         pretend <- GRanges(out$rname, IRanges(out$pos, out$pos + out$rwidth - 1L))

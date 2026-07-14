@@ -72,7 +72,7 @@ CHECKFUN <- function(npairs, nsingles, chromosomes, param) {
 
 .make_gr <- function(df, chromos) {
     maxed <- chromos[df$rname]
-    alen <- GenomicAlignments::cigarWidthAlongReferenceSpace(df$cigar)
+    alen <- cigarillo::cigar_extent_along_ref(df$cigar)
     GRanges(df$rname, IRanges(df$pos, pmin(maxed, df$pos + alen - 1L)))
 }
 

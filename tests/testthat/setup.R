@@ -52,8 +52,8 @@ simsam <- function(f.out, chr, pos, strands, chromosomes, mapq=199, is.dup=NULL,
 
         mate.chr.size <- chromosomes[mate.chr] + 1L # Keep above mate.chr reassignment!
         mate.chr <- ifelse(mate.chr==stuff$CHR, "=", mate.chr)
-        my.cigar <- GenomicAlignments::cigarWidthAlongReferenceSpace(stuff$CIGAR)
-        mate.cigar <- GenomicAlignments::cigarWidthAlongReferenceSpace(stuff$CIGAR[counterpart])
+        my.cigar <- cigarillo::cigar_extent_along_ref(stuff$CIGAR)
+        mate.cigar <- cigarillo::cigar_extent_along_ref(stuff$CIGAR[counterpart])
 
         isize <- pmin(pmax(mate.pos + mate.cigar, pos + my.cigar), mate.chr.size) - pmin(mate.pos, pos)
         isize[mate.pos < pos] <- isize[mate.pos < pos]*-1
